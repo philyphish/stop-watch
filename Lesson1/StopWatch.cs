@@ -18,14 +18,15 @@ namespace Lesson1
         {
             startTime = DateTime.Now;
             Console.WriteLine("Stop Watch is running...");
-
         }
 
-        public void stop()
+        public string stop()
         {
             endTime = DateTime.Now;
             elapsTime = endTime - startTime;
-            Console.WriteLine(elapsTime);
+            Console.WriteLine(elapsTime + "\n If you'd like to run the stop watch again type start type stop to quit: ");
+            return Console.ReadLine().ToLower();
+
         }
     }
 }

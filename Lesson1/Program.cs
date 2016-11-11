@@ -14,16 +14,14 @@ namespace Lesson1
 
             Console.WriteLine("To start the stop Watch, enter start: ");
             var stopWatch = new StopWatch();
-            var userInput = Console.ReadLine();
+            var userInput = Console.ReadLine().ToLower();
+
             while (userInput == "start")
             {
                 stopWatch.start();
                 userInput = Console.ReadLine();
+                userInput = stopWatch.stop();
             }
-                //this end method
-                stopWatch.stop();
-            
-            
         }
     }
 }
