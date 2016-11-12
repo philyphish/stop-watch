@@ -11,7 +11,7 @@ namespace Lesson1
     {
         static void Main(string[] args)
         {
-
+            var error = new InvalidOperationException();
             Console.WriteLine("To start the stop Watch, enter start: ");
             var stopWatch = new StopWatch();
             var userInput = Console.ReadLine().ToLower();
@@ -20,7 +20,14 @@ namespace Lesson1
             {
                 stopWatch.start();
                 userInput = Console.ReadLine();
-                userInput = stopWatch.stop();
+                if (userInput == "start")
+                {
+                    Console.WriteLine(error.Message);
+                }
+                else
+                {
+                    userInput = stopWatch.stop();
+                }
             }
         }
     }
